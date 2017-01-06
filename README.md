@@ -1,6 +1,12 @@
 ## asm
 ASM. Agente Salvavidas de Mascotas. Aplicación web para gestionar el proceso de publicación y adopción de mascotas.
 
+<h1 align="center">
+	<br>
+	<img width="400" src="https://uialberto.files.wordpress.com/2017/01/00002.png" alt="Búsqueda de mascotas">
+	<br>
+</h1>
+
 ## Presentación
 Aplicación web para gestionar el proceso de publicación y adopción de mascotas. Proyecto de código abierto que lleva por nombre “ASM – Agente Salvavidas de Mascotas”. La idea principal es crear una comunidad de personas dispuestas a salvar y mejorar la calidad de vida de mascotas abandonadas en las calles o puestas en adopción, ofreciéndoles esta herramienta para facilitar y gestionar el proceso de encontrarles un hogar.
 
@@ -42,11 +48,8 @@ Aplicación web para gestionar el proceso de publicación y adopción de mascota
 1. Instalar Prerequisitos
 2. Pull rama master
 3. Compilar solución
-4. SQL Server Express 2014+
-5. GitFlow for Visual Studio 2015
-6. GitHub Extension for Visual Studio 2015
-7. File Nesting Extension Visual Studio 2015
-8. Net Framework 4.6.1
+4. Ejecutar solución
+
 
 
 ## Licencia
