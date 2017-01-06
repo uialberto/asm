@@ -6,11 +6,11 @@ Aplicación web para gestionar el proceso de publicación y adopción de mascota
 
 ## Tecnologías
 
-1. C# 6.0
-2. ASP.NET Web API 2
-3. Entity Framework 6 Code First
-4. Unity IoC Container
-5. UnitOfWork, Repositories, Dtos, etc
+- C# 6.0
+- ASP.NET Web API 2
+- Entity Framework 6 Code First
+- Unity IoC Container
+- UnitOfWork, Repositories, Dtos, etc
 
 
 ## Caracteristicas
