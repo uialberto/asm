@@ -2,9 +2,7 @@
 ASM. Agente Salvavidas de Mascotas. Aplicación web para gestionar el proceso de publicación y adopción de mascotas.
 
 <h1 align="center">
-	<br>
 	<img src="https://uialberto.files.wordpress.com/2017/01/portadaasm.jpg" alt="Búsqueda de mascotas">
-	<br>
 </h1>
 
 ## Presentación
