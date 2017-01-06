@@ -3,7 +3,7 @@ ASM. Agente Salvavidas de Mascotas. Aplicación web para gestionar el proceso de
 
 <h1 align="center">
 	<br>
-	<img width="400" src="https://uialberto.files.wordpress.com/2017/01/00002.png" alt="Búsqueda de mascotas">
+	<img src="https://uialberto.files.wordpress.com/2017/01/00002.png" alt="Búsqueda de mascotas">
 	<br>
 </h1>
 
