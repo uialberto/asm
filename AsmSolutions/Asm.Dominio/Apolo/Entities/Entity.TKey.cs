@@ -9,6 +9,23 @@ namespace Asm.Dominio.Apolo.Entities
     public abstract class Entity<TKey> : IEntity<TKey>
     {
         private const int HashMultiplier = 31;
+
+        protected Entity()
+        {
+            this.CreatedDate = DateTime.UtcNow;
+            this.ModifiedDate = DateTime.UtcNow;
+            this.IsActive = true;
+            this.IsDeleted = false;
+        }
+        public DateTime CreatedDate { get; set; }
+
+        public DateTime? ModifiedDate { get; set; }
+
+        public DateTime? DeletedDate { get; set; }
+
+        public bool IsActive { get; set; }
+
+        public bool IsDeleted { get; set; }
         public override bool Equals(object obj)
         {
             if (!(obj is Entity<TKey>))

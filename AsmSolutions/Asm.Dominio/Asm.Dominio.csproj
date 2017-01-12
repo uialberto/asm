@@ -49,7 +49,12 @@
     <Compile Include="Apolo\Entities\IEntity.TKey.cs">
       <DependentUpon>IEntity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Apolo\Repositories\IRepository.cs" />
+    <Compile Include="Apolo\UoW\IUnitOfWork.cs" />
     <Compile Include="Modulos\Core\Agregados\AsmAgentes\AsmAgente.cs" />
+    <Compile Include="Modulos\Core\Agregados\AsmAgentes\IRepoAsmAgentes.cs" />
+    <Compile Include="Modulos\Core\Agregados\Mascotas\IRepoMascotas.cs" />
+    <Compile Include="Modulos\Core\Agregados\Mascotas\Mascota.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
