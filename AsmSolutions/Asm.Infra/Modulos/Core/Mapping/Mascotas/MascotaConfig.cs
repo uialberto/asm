@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Asm.Infra.Modulos.Core.Mapping.Mascotas
 {
-    public  partial class MascotaConfig : EntityTypeConfiguration<Mascota>
+    public partial class MascotaConfig : EntityTypeConfiguration<Mascota>
     {
         public MascotaConfig()
         {

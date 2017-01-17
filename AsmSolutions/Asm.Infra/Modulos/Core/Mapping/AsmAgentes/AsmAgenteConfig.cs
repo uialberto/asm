@@ -35,7 +35,6 @@ namespace Asm.Infra.Modulos.Core.Mapping.AsmAgentes
             Property(e => e.Apellidos).HasMaxLength(300);
 
 
-
             Property(e => e.Celular).IsOptional();
             Property(e => e.Celular).HasColumnName("Celular");
             Property(e => e.Celular).HasMaxLength(20);
@@ -52,6 +51,11 @@ namespace Asm.Infra.Modulos.Core.Mapping.AsmAgentes
             Property(e => e.Direccion).IsOptional();
             Property(e => e.Direccion).HasColumnName("Direccion");
             Property(e => e.Direccion).HasMaxLength(500);
+
+            //// Relaciones a uno
+            //Property(e => e.UserId).IsRequired();
+            //Property(e => e.UserId).HasColumnName("IdUser");
+            //HasRequired(e => e.User).WithMany(i => i.AsmAgentes).HasForeignKey(i => i.UserId);
 
             // Relaciones a muchos
             HasMany(e => e.Mascotas)

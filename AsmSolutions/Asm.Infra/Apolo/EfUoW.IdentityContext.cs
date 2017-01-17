@@ -7,18 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Asm.Dominio.Apolo.UoW;
+using Asm.Dominio.Modulos.Seguridad.Agregados.AppUsers;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Asm.Infra.Apolo
 {
-    public abstract class EfUoW : DbContext, IUnitOfWork, IEfUoW
+    public abstract class EfUoWIdentityContext : IdentityDbContext<AppUser>, IUnitOfWork, IEfUoW
     {
         private bool _disposed;
         public Guid InstanceId { get; }
-        public EfUoW(string nameOrConnectionString) : base(nameOrConnectionString)
+
+        public EfUoWIdentityContext(string nameOrConnectionString) : base(nameOrConnectionString)
         {
             InstanceId = Guid.NewGuid();
         }
-        protected EfUoW(DbConnection connection)
+        protected EfUoWIdentityContext(DbConnection connection)
             : base(connection, true)
         {
             InstanceId = Guid.NewGuid();
