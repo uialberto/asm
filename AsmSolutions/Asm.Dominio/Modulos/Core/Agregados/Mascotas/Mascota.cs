@@ -26,6 +26,7 @@ namespace Asm.Dominio.Modulos.Core.Agregados.Mascotas
         public string KeyTipoAnimal { get; set; }
         public string Direccion { get; set; }
         public string KeyTamanio { get; set; }
+        public DateTime FechaCreacion { get; set; }
 
 
         public Guid AsmAgenteId { get; set; }
