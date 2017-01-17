@@ -8,7 +8,7 @@ using Asm.Dominio.Modulos.Core.Agregados.AsmAgentes;
 
 namespace Asm.Dominio.Modulos.Core.Agregados.Mascotas
 {
-    public class Mascota : Entity<long>
+    public partial class Mascota : Entity<long>
     {
         public Mascota() : base()
         {
@@ -31,6 +31,8 @@ namespace Asm.Dominio.Modulos.Core.Agregados.Mascotas
 
         public Guid AsmAgenteId { get; set; }
         public virtual AsmAgente AsmAgente { get; set; }
+
+      
 
 
     }

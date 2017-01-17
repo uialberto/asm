@@ -7,7 +7,7 @@ using Asm.Dominio.Apolo.Repositories;
 
 namespace Asm.Dominio.Modulos.Core.Agregados.Mascotas
 {
-    public interface IRepoAsmAgentes : IRepository<Mascota>
+    public interface IRepoMascotas : IRepository<Mascota>
     {
 
     }
