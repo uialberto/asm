@@ -104,6 +104,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoriesTest.cs" />
     <Compile Include="TestUnit\Modulos\Core\RepoAsmAgentesTest.cs" />
+    <Compile Include="TestUnit\Modulos\Core\RepoMascotasTest.cs" />
     <Compile Include="UnitOfWorkTestUtils.cs" />
     <Compile Include="UnitOfWorkTestUtils.Initializer.cs">
       <DependentUpon>UnitOfWorkTestUtils.cs</DependentUpon>
