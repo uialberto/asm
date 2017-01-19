@@ -9,7 +9,7 @@ using Asm.Infra.Apolo;
 
 namespace Asm.Infra.Modulos.Core.Repositorios
 {
-    public partial class RepoAsmAgentes : Repository<AsmAgente>, IRepoAsmAgentes
+    public partial class RepoAsmAgentes : RepositoryIdentity<AsmAgente>, IRepoAsmAgentes
     {
         public RepoAsmAgentes(IUnitOfWork context) : base(context)
         {

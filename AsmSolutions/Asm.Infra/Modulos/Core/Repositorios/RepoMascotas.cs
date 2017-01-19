@@ -10,7 +10,7 @@ using Asm.Infra.Apolo;
 namespace Asm.Infra.Modulos.Core.Repositorios
 {
 
-    public partial class RepoMascotas : Repository<Mascota>, IRepoMascotas
+    public partial class RepoMascotas : RepositoryIdentity<Mascota>, IRepoMascotas
     {
         public RepoMascotas(IUnitOfWork context) : base(context)
         {
