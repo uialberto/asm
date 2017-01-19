@@ -9,7 +9,7 @@ using Asm.Dominio.Modulos.Seguridad.Agregados.AppUsers;
 
 namespace Asm.Dominio.Modulos.Core.Agregados.AsmAgentes
 {
-    public partial class AsmAgente : Entity<Guid>
+    public partial class AsmAgente : Entity<string>
     {
         public AsmAgente() : base()
         {
@@ -23,8 +23,8 @@ namespace Asm.Dominio.Modulos.Core.Agregados.AsmAgentes
 
         public virtual ICollection<Mascota> Mascotas { get; set; }
 
-        //public string UserId { get; set; }
-        //public virtual AppUser User { get; set; }
+        public string UserId { get; set; }
+        public virtual AppUser User { get; set; }
 
 
     }

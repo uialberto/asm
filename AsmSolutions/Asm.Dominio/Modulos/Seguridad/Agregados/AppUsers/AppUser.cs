@@ -13,5 +13,6 @@ namespace Asm.Dominio.Modulos.Seguridad.Agregados.AppUsers
     public class AppUser : IdentityUser
     {
         public virtual ICollection<AsmAgente> AsmAgentes { get; set; }
+
     }
 }

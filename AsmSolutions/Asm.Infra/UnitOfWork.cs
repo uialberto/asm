@@ -15,11 +15,8 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Asm.Infra
 {
-    public class UnitOfWork : EfUoW
+    public class UnitOfWork : EfUoWIdentity
     {
-        private bool _disposed;
-        public Guid InstanceId { get; }
-
         #region Constructor
 
         public UnitOfWork()
@@ -47,6 +44,10 @@ namespace Asm.Infra
         protected override void OnModelCreating(DbModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            // Custom table names for ASP.NET Identity
+            //http://coderdiaries.com/2014/01/29/custom-table-names-for-asp-net-identity/
+
 
             builder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             builder.Conventions.Remove<PluralizingTableNameConvention>();
