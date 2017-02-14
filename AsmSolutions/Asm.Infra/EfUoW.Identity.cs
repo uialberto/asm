@@ -16,6 +16,7 @@ namespace Asm.Infra
     public abstract class EfUoWIdentity : IdentityDbContext<AppUser>, IUnitOfWork, IEfUoW
     {
         private bool _disposed;
+
         public Guid InstanceId { get; }
 
         public EfUoWIdentity(string nameOrConnectionString) : base(nameOrConnectionString)

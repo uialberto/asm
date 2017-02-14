@@ -301,8 +301,10 @@ namespace Asm.Infra
          Expression<Func<TProjection, TOrderProperty>> orderBy,
          SortOrder sortOrder = SortOrder.Ascending)
         {
+
             if (pageIndex < 1) pageIndex = 1;
             if (pageSize < 1) pageSize = 1;
+
             if (sortOrder == SortOrder.Ascending)
             {
                 var res1 = GetAll().Where(filterExpression)
