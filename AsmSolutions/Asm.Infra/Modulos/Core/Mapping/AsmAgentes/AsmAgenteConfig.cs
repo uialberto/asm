@@ -44,10 +44,6 @@ namespace Asm.Infra.Modulos.Core.Mapping.AsmAgentes
             Property(e => e.Telefono).HasColumnName("Telefono");
             Property(e => e.Telefono).HasMaxLength(20);
 
-            Property(e => e.Telefono).IsOptional();
-            Property(e => e.Telefono).HasColumnName("Telefono");
-            Property(e => e.Telefono).HasMaxLength(20);
-
             Property(e => e.Direccion).IsOptional();
             Property(e => e.Direccion).HasColumnName("Direccion");
             Property(e => e.Direccion).HasMaxLength(500);

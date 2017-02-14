@@ -40,6 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Apolo\Services\AppService.cs" />
+    <Compile Include="Apolo\Services\IAppService.cs" />
+    <Compile Include="Modulos\Core\AsmAgentes\IAppServiceAsmAgentes.cs" />
+    <Compile Include="Modulos\Core\AsmAgentes\Impl\AppServiceAsmAgentes.cs" />
+    <Compile Include="Modulos\Core\Mascotas\Impl\AppServiceMascotas.cs" />
+    <Compile Include="Modulos\Core\Mascotas\IAppServiceMascotas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -60,7 +66,6 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Modulos\Core\" />
     <Folder Include="Modulos\Seguridad\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

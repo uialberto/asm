@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Asm.Aplicacion.Dtos
+namespace Asm.Aplicacion.Dtos.Apolo.Dtos
 {
-    public class Class1
+    public abstract class EntityDto : EntityDto<long>
     {
     }
 }
