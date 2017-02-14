@@ -29,9 +29,7 @@ namespace Asm.Infra
             if (_unitOfWork != null) _dbSet = _unitOfWork.CreateSet<TEntity>() as DbSet<TEntity>;
         }
         public Guid InstanceId { get; }
-
         public IUnitOfWork UnitOfWork => _unitOfWork;
-
         public virtual void Add(TEntity entity)
         {
             try
@@ -239,7 +237,6 @@ namespace Asm.Infra
         {
             return GetAll().Where(filterExpression);
         }
-
         public virtual IEnumerable<TEntity> GetPage<TOrderBy>(Expression<Func<TEntity, bool>> filterExpression,
             Expression<Func<TEntity, TOrderBy>> orderBy, int pageIndex, int pageSize, SortOrder sortOrder = SortOrder.Ascending)
         {

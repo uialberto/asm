@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Asm.Aplicacion
+namespace Asm.Aplicacion.Modulos.Seguridad.AppUsers
 {
-    public class Class1
+    public interface ISecurityService
     {
     }
 }

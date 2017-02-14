@@ -15,7 +15,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Asm.Infra
 {
-    public class UnitOfWork : EfUoWIdentity
+    public class UnitOfWork : EfUoWIdentity, IUnitOfWork
     {
         #region Constructor
 
