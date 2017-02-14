@@ -90,6 +90,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="ApplicationServiceTest.cs" />
+    <Compile Include="Modulos\Core\AppServiceAsmAgentesTest.cs" />
+    <Compile Include="Modulos\Core\AppServiceMascotasTest.cs" />
+    <Compile Include="Modulos\Seguridad\SecurityServiceTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -118,6 +121,7 @@
       <Name>Asm.Infra</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
