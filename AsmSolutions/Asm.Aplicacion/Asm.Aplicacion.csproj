@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,6 +46,8 @@
   <ItemGroup>
     <Compile Include="Apolo\Services\AppService.cs" />
     <Compile Include="Apolo\Services\IAppService.cs" />
+    <Compile Include="Helpers\AutoMapperConfiguration.cs" />
+    <Compile Include="Helpers\IoCUnityConfiguration.cs" />
     <Compile Include="Modulos\Core\AsmAgentes\IAppServiceAsmAgentes.cs" />
     <Compile Include="Modulos\Core\AsmAgentes\Impl\AppServiceAsmAgentes.cs" />
     <Compile Include="Modulos\Core\Mascotas\Impl\AppServiceMascotas.cs" />
@@ -64,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Modulos\Seguridad\" />
