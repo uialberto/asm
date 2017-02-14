@@ -25,6 +25,7 @@ namespace Asm.Aplicacion.Helpers
         public static void Initialise()
         {
             Configure();
+
         }
         private static void Configure()
         {
