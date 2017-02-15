@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Asm.Aplicacion.Apolo.Services;
+using Asm.Aplicacion.Dtos.DataTransfers;
 using Asm.Dominio.Modulos.Core.Agregados.Mascotas;
 
 namespace Asm.Aplicacion.Modulos.Core.Mascotas.Impl
@@ -22,9 +23,6 @@ namespace Asm.Aplicacion.Modulos.Core.Mascotas.Impl
             Repository = pRepository;
         }
 
-        //ToDo Otros constructores...
-
         #endregion
-
     }
 }
