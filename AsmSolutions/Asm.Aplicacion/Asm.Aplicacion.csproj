@@ -114,6 +114,7 @@
     <Compile Include="Modulos\Core\AsmAgentes\Impl\AppServiceAsmAgentes.cs" />
     <Compile Include="Modulos\Core\Mascotas\Impl\AppServiceMascotas.cs" />
     <Compile Include="Modulos\Core\Mascotas\IAppServiceMascotas.cs" />
+    <Compile Include="Modulos\Seguridad\AppUsers\Impl\AppSignInManager.cs" />
     <Compile Include="Modulos\Seguridad\AppUsers\Impl\AppUserManager.cs" />
     <Compile Include="Modulos\Seguridad\AppUsers\Impl\SecurityService.cs" />
     <Compile Include="Modulos\Seguridad\AppUsers\ISecurityService.cs" />
