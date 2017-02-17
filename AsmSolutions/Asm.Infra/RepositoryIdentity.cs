@@ -183,6 +183,7 @@ namespace Asm.Infra
             var query = GetSetAsQueryable(includes);
             return query;
         }
+        
         IQueryable<TEntity> GetSetAsQueryable(params Expression<Func<TEntity, object>>[] includes)
         {
             var result = _dbSet.AsQueryable();

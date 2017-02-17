@@ -9,7 +9,7 @@ using Asm.Aplicacion.Dtos.Apolo.Dtos;
 namespace Asm.Aplicacion.Dtos.DataTransfers
 {
     public partial class MascotaDto : EntityDto<long>
-    {
+    {                        
         public MascotaDto() : base()
         {
 

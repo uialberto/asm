@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,8 @@ namespace Asm.Aplicacion.Modulos.Core.AsmAgentes
 {
     public interface IAppServiceAsmAgentes
     {
+        AsmAgenteDto Obtener(AsmAgenteDto dto);
         int Crear(AsmAgenteDto dto);
-        Task<int> CrearAsync(AsmAgenteDto dto);
+
     }
 }

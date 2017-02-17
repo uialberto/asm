@@ -43,8 +43,9 @@ namespace Asm.Infra.Test.Helpers.Modulos.Core
                 User = new AppUser()
                 {
                     Id = UtilitariosBase.NewGuid().Substring(10),
-                    UserName = "uibasoft",
-                    PasswordHash = new PasswordHasher().HashPassword("uibasoft")
+                    UserName = UtilitariosBase.NewGuid().Substring(8),
+                    PasswordHash = new PasswordHasher().HashPassword("uibasoft"),
+                    Email = UtilitariosBase.NewGuid().Substring(5) + "@uibasoft.com"
 
                 }
                 // Otras propiedades requeridas...

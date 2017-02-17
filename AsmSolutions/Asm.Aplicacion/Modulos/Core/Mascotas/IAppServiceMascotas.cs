@@ -10,5 +10,6 @@ namespace Asm.Aplicacion.Modulos.Core.Mascotas
 {
     public interface IAppServiceMascotas
     {
+        List<MascotaDto> MascotasOlvidadas();
     }
 }

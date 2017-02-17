@@ -42,10 +42,10 @@ namespace Asm.Infra.Test.Helpers.Modulos.Core
                 Id = (long)UtilitariosBase.NextLongId<Mascota, long, IRepository<Mascota>>(CreateRepository), // ToDo Opcional
                 Nombre = UtilitariosBase.NewGuid(),
                 FechaCreacion = DateTime.UtcNow,
-                KeyEstado = UtilitariosBase.NewGuid().Substring(0,3),
-                KeyTipoAnimal = UtilitariosBase.NewGuid().Substring(0,3),
+                KeyEstado = "P",
+                KeyTipoAnimal = UtilitariosBase.NewGuid().Substring(0, 3),
                 Direccion = UtilitariosBase.NewGuid(),
-                KeyTamanio = UtilitariosBase.NewGuid().Substring(0,3),
+                KeyTamanio = UtilitariosBase.NewGuid().Substring(0, 3),
                 AsmAgente = RepoAsmAgentesHelperTest.Get()
                 // Otras propiedades requeridas....
             };
