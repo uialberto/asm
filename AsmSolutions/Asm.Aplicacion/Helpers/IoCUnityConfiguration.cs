@@ -22,7 +22,7 @@ namespace Asm.Aplicacion.Helpers
     public static class IoCUnityConfiguration
     {
         private static IUnityContainer _unityContainer;
-        public static void Initialise()
+        public static void Initialize()
         {
             Configure();
 

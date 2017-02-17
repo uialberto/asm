@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Asm.Aplicacion.Apolo.Services;
+using Asm.Aplicacion.Dtos.DataTransfers;
 
 namespace Asm.Aplicacion.Modulos.Core.Mascotas
 {
-    public interface IAppServiceMascotas 
+    public interface IAppServiceMascotas
     {
-        // ToDo Servicios de aplicacion
+        List<MascotaDto> MascotasOlvidadas();
     }
 }
