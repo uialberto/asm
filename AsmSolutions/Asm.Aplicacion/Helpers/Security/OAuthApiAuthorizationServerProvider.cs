@@ -29,14 +29,7 @@ namespace Asm.Aplicacion.Helpers.Security
         {
             // ToDo...issue9
 
-            var unitOfWork = IoCUnityConfiguration.UnityManager.Resolve<IUnitOfWork>() as UnitOfWork;
-
-            if (unitOfWork == null)
-                throw new ArgumentNullException(nameof(unitOfWork));
-
-            var userManager = new AppUserManager(new UserStore<AppUser>(unitOfWork));
-
-            //var userManager = context.OwinContext.GetUserManager<AppUserManager>();
+            var userManager = context.OwinContext.GetUserManager<AppUserManager>();
 
             try
             {
