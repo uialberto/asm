@@ -4,16 +4,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Asm.Aplicacion.Helpers;
+using Asm.Dominio.Apolo.UoW;
 using Asm.Dominio.Modulos.Seguridad.Agregados.AppUsers;
 using Asm.Infra;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
+using Microsoft.Practices.Unity;
 
 namespace Asm.Aplicacion.Modulos.Seguridad.AppUsers.Impl
 {
     public class AppUserManager : UserManager<AppUser>
     {
+        // ToDo...issue9
         public AppUserManager(IUserStore<AppUser> store)
             : base(store)
         {
@@ -21,7 +25,14 @@ namespace Asm.Aplicacion.Modulos.Seguridad.AppUsers.Impl
 
         public static AppUserManager Create(IdentityFactoryOptions<AppUserManager> options, IOwinContext context)
         {
-            var manager = new AppUserManager(new UserStore<AppUser>(context.Get<UnitOfWork>()));
+            var unitOfWork = IoCUnityConfiguration.UnityManager.Resolve<IUnitOfWork>();
+
+            if (unitOfWork == null)
+                throw new ArgumentNullException(nameof(unitOfWork));
+
+            var userStore = new UserStore<AppUser>(new UnitOfWork());
+
+            var manager = new AppUserManager(userStore);
 
             #region Configuracion Validacion User y Password
 

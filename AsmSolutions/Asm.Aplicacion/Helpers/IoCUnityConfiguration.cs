@@ -21,7 +21,7 @@ namespace Asm.Aplicacion.Helpers
 {
     public static class IoCUnityConfiguration
     {
-        private static IUnityContainer _unityContainer;
+        private static UnityContainer _unityContainer;
         public static void Initialize()
         {
             Configure();
@@ -42,7 +42,11 @@ namespace Asm.Aplicacion.Helpers
 
             #region UnitOfWork
 
-            _unityContainer.RegisterType<IUnitOfWork, UnitOfWork>();
+            var connectionString = ConfigurationManager.ConnectionStrings["AsmContext"];
+            if (string.IsNullOrEmpty(connectionString?.ConnectionString))
+                throw new ConfigurationErrorsException(nameof(connectionString));
+
+            _unityContainer.RegisterType<IUnitOfWork, UnitOfWork>(new InjectionConstructor(connectionString.ConnectionString));
 
             #endregion
 
@@ -51,23 +55,18 @@ namespace Asm.Aplicacion.Helpers
             _unityContainer.RegisterType<IRepoAsmAgentes, RepoAsmAgentes>();
             _unityContainer.RegisterType<IRepoMascotas, RepoMascotas>();
 
-
             #endregion
 
-            #region Servicios Aplicacion           
+            #region Servicios Aplicacion
 
-            _unityContainer.RegisterType<ISecurityService, SecurityService>();
             _unityContainer.RegisterType<IAppServiceAsmAgentes, AppServiceAsmAgentes>();
             _unityContainer.RegisterType<IAppServiceMascotas, AppServiceMascotas>();
 
             #endregion
 
-            #region Componentes Transversales General Applications
-
-            #endregion
-
         }
-        public static IUnityContainer Container => _unityContainer ?? (_unityContainer = new UnityContainer());
+
+        public static UnityContainer UnityManager => _unityContainer ?? (_unityContainer = new UnityContainer());
 
 
     }

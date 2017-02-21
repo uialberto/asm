@@ -22,19 +22,20 @@ namespace Asm.Infra
         public UnitOfWork()
             : base("AsmContext")
         {
-
+            Database.SetInitializer(new UnitOfWorkInitializer());
+            Configuration.LazyLoadingEnabled = false;
         }
 
-        public UnitOfWork(string nameOrConnectionString) : base(nameOrConnectionString)
+        public UnitOfWork(string nameOrConnectionString)
+            : base(nameOrConnectionString)
         {
             Database.SetInitializer(new UnitOfWorkInitializer());
             Configuration.LazyLoadingEnabled = false;
         }
-        protected UnitOfWork(DbConnection connection)
-            : base(connection)
+
+        public static UnitOfWork Create()
         {
-            Database.SetInitializer(new UnitOfWorkInitializer());
-            Configuration.LazyLoadingEnabled = false;
+            return new UnitOfWork();
         }
 
         #endregion
@@ -47,7 +48,6 @@ namespace Asm.Infra
 
             // Custom table names for ASP.NET Identity
             //http://coderdiaries.com/2014/01/29/custom-table-names-for-asp-net-identity/
-
 
             builder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             builder.Conventions.Remove<PluralizingTableNameConvention>();

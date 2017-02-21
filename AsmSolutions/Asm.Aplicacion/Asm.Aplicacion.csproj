@@ -98,6 +98,19 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -110,10 +123,24 @@
     <Compile Include="Apolo\Services\IAppService.cs" />
     <Compile Include="Helpers\AutoMapperConfiguration.cs" />
     <Compile Include="Helpers\IoCUnityConfiguration.cs" />
+    <Compile Include="Helpers\KeyConfiguration.cs" />
+    <Compile Include="Helpers\Security\AuthorizeAttribute.cs" />
+    <Compile Include="Helpers\Security\Localization\AuthorizeAttribute.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AuthorizeAttribute.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Security\Localization\OAuthApiAuthorizationServerProvider.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OAuthApiAuthorizationServerProvider.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\TestDataConfiguration.cs" />
     <Compile Include="Modulos\Core\AsmAgentes\IAppServiceAsmAgentes.cs" />
     <Compile Include="Modulos\Core\AsmAgentes\Impl\AppServiceAsmAgentes.cs" />
     <Compile Include="Modulos\Core\Mascotas\Impl\AppServiceMascotas.cs" />
     <Compile Include="Modulos\Core\Mascotas\IAppServiceMascotas.cs" />
+    <Compile Include="Helpers\Security\OAuthApiAuthorizationServerProvider.cs" />
     <Compile Include="Modulos\Seguridad\AppUsers\Impl\AppSignInManager.cs" />
     <Compile Include="Modulos\Seguridad\AppUsers\Impl\AppUserManager.cs" />
     <Compile Include="Modulos\Seguridad\AppUsers\Impl\SecurityService.cs" />
@@ -138,7 +165,16 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Helpers\Security\Localization\AuthorizeAttribute.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AuthorizeAttribute.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helpers\Security\Localization\OAuthApiAuthorizationServerProvider.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OAuthApiAuthorizationServerProvider.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

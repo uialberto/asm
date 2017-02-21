@@ -13,6 +13,7 @@ namespace Asm.Aplicacion.Modulos.Seguridad.AppUsers.Impl
 {
     public class AppSignInManager : SignInManager<AppUser, string>
     {
+        // ToDo...issue9
         public AppSignInManager(AppUserManager userManager, IAuthenticationManager authenticationManager)
             : base(userManager, authenticationManager)
         {
@@ -22,7 +23,5 @@ namespace Asm.Aplicacion.Modulos.Seguridad.AppUsers.Impl
         {
             return new AppSignInManager(context.GetUserManager<AppUserManager>(), context.Authentication);
         }
-
-        // ToDo Mas implementaciones.. 
     }
 }
