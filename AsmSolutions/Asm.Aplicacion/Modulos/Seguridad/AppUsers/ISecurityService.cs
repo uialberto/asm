@@ -8,6 +8,6 @@ namespace Asm.Aplicacion.Modulos.Seguridad.AppUsers
 {
     public interface ISecurityService
     {
-
+        
     }
 }
