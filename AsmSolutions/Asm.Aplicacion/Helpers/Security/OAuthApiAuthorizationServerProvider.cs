@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Asm.Aplicacion.Modulos.Seguridad.AppUsers;
 using Asm.Aplicacion.Modulos.Seguridad.AppUsers.Impl;
 using Asm.Dominio.Apolo.UoW;
 using Asm.Dominio.Modulos.Seguridad.Agregados.AppUsers;
@@ -17,7 +18,7 @@ using LocalizedText = Asm.Aplicacion.Helpers.Security.Localization.OAuthApiAutho
 namespace Asm.Aplicacion.Helpers.Security
 {
     public class OAuthApiAuthorizationServerProvider : OAuthAuthorizationServerProvider
-    {
+    {        
         public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
             // ToDo...issue9

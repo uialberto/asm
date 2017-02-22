@@ -59,6 +59,8 @@ namespace Asm.Aplicacion.Helpers
 
             #region Servicios Aplicacion
 
+            _unityContainer.RegisterType<ISecurityService, SecurityService>();
+
             _unityContainer.RegisterType<IAppServiceAsmAgentes, AppServiceAsmAgentes>();
             _unityContainer.RegisterType<IAppServiceMascotas, AppServiceMascotas>();
 

@@ -1,8 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Asm.Aplicacion.Helpers;
 using Asm.Dominio.Apolo.UoW;
@@ -63,6 +60,15 @@ namespace Asm.Aplicacion.Modulos.Seguridad.AppUsers.Impl
 
             return manager;
 
+        }
+
+        public async Task<bool> ExistUserLoginInfo(string provider, string providerKey)
+        {
+            var result = false;
+            var user = await FindAsync(new UserLoginInfo(provider, providerKey));
+            if (user != null)
+                result = true;
+            return result;
         }
     }
 }

@@ -33,6 +33,9 @@ namespace Asm.Aplicacion.Helpers
                 config.CreateMap<Dominio.Modulos.Core.Agregados.AsmAgentes.AsmAgente, Dtos.DataTransfers.AsmAgenteDto>()
                     .ForMember(dto => dto.UserId, opt => opt.MapFrom(entity => entity.UserId));
 
+                config.CreateMap<Dominio.Modulos.Core.Agregados.ClientesApi.ClienteApi, Dtos.DataTransfers.ClienteApiDto>()
+                   .ForMember(dto => dto.Tipo, opt => opt.MapFrom(entity => entity.Tipo));
+
             });
         }
 

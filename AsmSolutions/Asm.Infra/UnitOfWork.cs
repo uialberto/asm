@@ -10,6 +10,7 @@ using Asm.Dominio.Apolo.UoW;
 using Asm.Dominio.Modulos.Seguridad.Agregados.AppUsers;
 using Asm.Infra.Apolo;
 using Asm.Infra.Modulos.Core.Mapping.AsmAgentes;
+using Asm.Infra.Modulos.Core.Mapping.ClientesApi;
 using Asm.Infra.Modulos.Core.Mapping.Mascotas;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -56,6 +57,7 @@ namespace Asm.Infra
             // Modulos Asm
             builder.Configurations.Add(new MascotaConfig());
             builder.Configurations.Add(new AsmAgenteConfig());
+            builder.Configurations.Add(new ClienteApiConfig());
 
         }
 

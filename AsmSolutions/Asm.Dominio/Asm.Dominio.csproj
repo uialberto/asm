@@ -69,6 +69,8 @@
     <Compile Include="Apolo\UoW\IUnitOfWork.cs" />
     <Compile Include="Modulos\Core\Agregados\AsmAgentes\AsmAgente.cs" />
     <Compile Include="Modulos\Core\Agregados\AsmAgentes\IRepoAsmAgentes.cs" />
+    <Compile Include="Modulos\Core\Agregados\ClientesApi\ClienteApi.cs" />
+    <Compile Include="Modulos\Core\Agregados\ClientesApi\IRepoClientesApi.cs" />
     <Compile Include="Modulos\Core\Agregados\Mascotas\IRepoMascotas.cs" />
     <Compile Include="Modulos\Core\Agregados\Mascotas\Mascota.cs" />
     <Compile Include="Modulos\Seguridad\Agregados\AppUsers\AppUser.cs" />

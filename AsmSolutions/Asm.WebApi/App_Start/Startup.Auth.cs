@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 using System.Web;
 using Asm.Aplicacion.Helpers;
 using Asm.Aplicacion.Modulos.Seguridad.AppUsers.Impl;
@@ -9,6 +11,12 @@ using Microsoft.Owin.Security.OAuth;
 using Microsoft.Practices.Unity;
 using Owin;
 using Asm.Aplicacion.Helpers.Security;
+using Asm.Aplicacion.Modulos.Seguridad.AppUsers;
+using Microsoft.AspNet.Identity;
+using Microsoft.Owin.Security;
+using Microsoft.Owin.Security.Cookies;
+using Microsoft.Owin.Security.Facebook;
+using Owin.Security.Providers.GitHub;
 
 namespace Asm.WebApi
 {
@@ -21,25 +29,25 @@ namespace Asm.WebApi
             app.CreatePerOwinContext<AppUserManager>(AppUserManager.Create);
             app.CreatePerOwinContext<AppSignInManager>(AppSignInManager.Create);
 
-            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
+            app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
             #region UseOAuthBearerAuthentication
 
             var oAuthServerOptions = new OAuthAuthorizationServerOptions()
             {
-                AllowInsecureHttp = true,
+                AllowInsecureHttp = true, //ToDo Modificar en Produccion
                 TokenEndpointPath = new PathString(UrlToken),
                 AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(20),
                 Provider = new OAuthApiAuthorizationServerProvider(),
             };
-            app.UseOAuthAuthorizationServer(oAuthServerOptions);
 
             var authOptions = new OAuthBearerAuthenticationOptions()
             {
                 AuthenticationType = "Bearer",
-                AuthenticationMode = Microsoft.Owin.Security.AuthenticationMode.Active
+                AuthenticationMode = AuthenticationMode.Active
             };
 
+            app.UseOAuthAuthorizationServer(oAuthServerOptions);
             app.UseOAuthBearerAuthentication(authOptions);
 
             #endregion

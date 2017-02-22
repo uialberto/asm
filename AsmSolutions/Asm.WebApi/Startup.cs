@@ -1,9 +1,14 @@
 ﻿using System;
 using System.Data.Entity;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Http;
 using Asm.Aplicacion.Helpers;
+using Asm.Aplicacion.Modulos.Seguridad.AppUsers;
+using Asm.Aplicacion.Modulos.Seguridad.AppUsers.Impl;
 using Microsoft.Owin;
+using Microsoft.Owin.Security;
+using Microsoft.Practices.Unity;
 using Owin;
 
 [assembly: OwinStartup(typeof(Asm.WebApi.Startup))]
@@ -24,13 +29,18 @@ namespace Asm.WebApi
             WebApiConfig.Register(config);
 
             IoCUnityConfiguration.Initialize();
+                     
             AutoMapperConfiguration.Initialize();
 
             ConfigureOAuth(app);
 
             TestDataConfiguration.Initialize();
 
+            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
+
             app.UseWebApi(config);
+
+
 
         }
 

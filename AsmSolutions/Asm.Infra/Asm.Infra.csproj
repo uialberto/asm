@@ -94,8 +94,10 @@
     <Compile Include="EfUoW.Identity.cs" />
     <Compile Include="Apolo\Repository.cs" />
     <Compile Include="Modulos\Core\Mapping\AsmAgentes\AsmAgenteConfig.cs" />
+    <Compile Include="Modulos\Core\Mapping\ClientesApi\ClienteApiConfig.cs" />
     <Compile Include="Modulos\Core\Mapping\Mascotas\MascotaConfig.cs" />
     <Compile Include="Modulos\Core\Repositorios\RepoAsmAgentes.cs" />
+    <Compile Include="Modulos\Core\Repositorios\RepoClientesApi.cs" />
     <Compile Include="Modulos\Core\Repositorios\RepoMascotas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryIdentity.cs" />

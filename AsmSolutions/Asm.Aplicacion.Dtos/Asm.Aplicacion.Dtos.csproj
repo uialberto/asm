@@ -46,6 +46,7 @@
       <DependentUpon>EntityDto.cs</DependentUpon>
     </Compile>
     <Compile Include="DataTransfers\AsmAgenteDto.cs" />
+    <Compile Include="DataTransfers\ClienteApiDto.cs" />
     <Compile Include="DataTransfers\Localization\AsmAgenteDto.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
