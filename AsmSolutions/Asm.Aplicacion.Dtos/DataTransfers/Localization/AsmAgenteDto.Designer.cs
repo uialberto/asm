@@ -22,7 +22,7 @@ namespace Asm.Aplicacion.Dtos.DataTransfers.Localization {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class AsmAgenteDto {
+    internal class AsmAgenteDto {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Asm.Aplicacion.Dtos.DataTransfers.Localization {
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Asm.Aplicacion.Dtos.DataTransfers.Localization.AsmAgenteDto", typeof(AsmAgenteDto).Assembly);
@@ -51,7 +51,7 @@ namespace Asm.Aplicacion.Dtos.DataTransfers.Localization {
         ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Asm.Aplicacion.Dtos.DataTransfers.Localization {
         /// <summary>
         ///   Busca una cadena traducida similar a Apellidos ha superado el número de caracteres permitidos..
         /// </summary>
-        public static string ApellidosLengthError {
+        internal static string ApellidosLengthError {
             get {
                 return ResourceManager.GetString("ApellidosLengthError", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace Asm.Aplicacion.Dtos.DataTransfers.Localization {
         /// <summary>
         ///   Busca una cadena traducida similar a Celular ha superado el número de caracteres permitidos..
         /// </summary>
-        public static string CelularLengthError {
+        internal static string CelularLengthError {
             get {
                 return ResourceManager.GetString("CelularLengthError", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace Asm.Aplicacion.Dtos.DataTransfers.Localization {
         /// <summary>
         ///   Busca una cadena traducida similar a Dirección ha superado el número de caracteres permitidos..
         /// </summary>
-        public static string DireccionLengthError {
+        internal static string DireccionLengthError {
             get {
                 return ResourceManager.GetString("DireccionLengthError", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace Asm.Aplicacion.Dtos.DataTransfers.Localization {
         /// <summary>
         ///   Busca una cadena traducida similar a Nombres ha superado el número de caracteres permitidos..
         /// </summary>
-        public static string NombresLengthError {
+        internal static string NombresLengthError {
             get {
                 return ResourceManager.GetString("NombresLengthError", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace Asm.Aplicacion.Dtos.DataTransfers.Localization {
         /// <summary>
         ///   Busca una cadena traducida similar a Teléfono ha superado el número de caracteres permitidos..
         /// </summary>
-        public static string TelefonoLengthError {
+        internal static string TelefonoLengthError {
             get {
                 return ResourceManager.GetString("TelefonoLengthError", resourceCulture);
             }

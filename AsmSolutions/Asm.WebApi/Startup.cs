@@ -6,6 +6,7 @@ using System.Web.Http;
 using Asm.Aplicacion.Helpers;
 using Asm.Aplicacion.Modulos.Seguridad.AppUsers;
 using Asm.Aplicacion.Modulos.Seguridad.AppUsers.Impl;
+using Asm.WebApi.Helpers;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Practices.Unity;
@@ -28,8 +29,8 @@ namespace Asm.WebApi
 
             WebApiConfig.Register(config);
 
-            IoCUnityConfiguration.Initialize();
-                     
+            IoCUnityInitialize.Initialize();
+
             AutoMapperConfiguration.Initialize();
 
             ConfigureOAuth(app);
@@ -43,6 +44,5 @@ namespace Asm.WebApi
 
 
         }
-
     }
 }

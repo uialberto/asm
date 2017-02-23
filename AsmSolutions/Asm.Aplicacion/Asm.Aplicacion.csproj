@@ -129,6 +129,7 @@
     <Compile Include="Helpers\AutoMapperConfiguration.cs" />
     <Compile Include="Helpers\IoCUnityConfiguration.cs" />
     <Compile Include="Helpers\KeyConfiguration.cs" />
+    <Compile Include="Helpers\Security\IAppPrincipalProvider.cs" />
     <Compile Include="Helpers\Security\Localization\AuthorizeAttribute.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -171,11 +172,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Helpers\Security\Localization\AuthorizeAttribute.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
+      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>AuthorizeAttribute.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Helpers\Security\Localization\OAuthApiAuthorizationServerProvider.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
+      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>OAuthApiAuthorizationServerProvider.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
