@@ -26,7 +26,7 @@ Aplicación web para gestionar el proceso de publicación y adopción de mascota
 - Autenticación Web API 2 OAuth Bearer Tokens
 - API REST bajo ASP.NET Web API 2
 - Entity Framework con Code First
-- Seguridad de Usuarios con ASP.NET Identity (Por definir)
+- Seguridad de Usuarios con ASP.NET Identity
 - Implementación de Pruebas Unitarias
 - Repositorio de Codigo GitHub
 
