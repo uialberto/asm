@@ -51,9 +51,12 @@ namespace Asm.Infra.Modulos.Core.Mapping.ClientesApi
             Property(e => e.Tipo).IsRequired();
             Property(e => e.Tipo).HasColumnName("TipoApi");
 
-            Property(e => e.AllowedOrigin).IsOptional();
-            Property(e => e.AllowedOrigin).HasColumnName("AllowedOrigin");
-            Property(e => e.AllowedOrigin).HasMaxLength(100);
+            Property(e => e.PermiteOrigin).IsOptional();
+            Property(e => e.PermiteOrigin).HasColumnName("PermiteOrigina");
+            Property(e => e.PermiteOrigin).HasMaxLength(100);
+
+            Property(e => e.FechaCreacion).IsRequired();
+            Property(e => e.FechaCreacion).HasColumnName("FechaCreacion");
 
         }
     }

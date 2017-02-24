@@ -15,6 +15,7 @@ namespace Asm.Aplicacion.Dtos.DataTransfers
         public string ApiSecret { get; set; }
         public bool Active { get; set; }
         public int Tipo { get; set; }
-        public string AllowedOrigin { get; set; }
+        public string PermiteOrigin { get; set; }
+        public DateTime FechaCreacion { get; set; }
     }
 }

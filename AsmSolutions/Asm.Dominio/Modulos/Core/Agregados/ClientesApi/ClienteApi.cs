@@ -20,6 +20,7 @@ namespace Asm.Dominio.Modulos.Core.Agregados.ClientesApi
         public string ApiSecret { get; set; }
         public bool Active { get; set; }
         public TipoClienteApi Tipo { get; set; }
-        public string AllowedOrigin { get; set; }
+        public string PermiteOrigin { get; set; }
+        public DateTime FechaCreacion { get; set; }
     }
 }
