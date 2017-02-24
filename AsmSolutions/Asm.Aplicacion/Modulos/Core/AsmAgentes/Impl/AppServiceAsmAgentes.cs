@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Asm.Aplicacion.Dtos.DataTransfers;
+using Asm.Aplicacion.Helpers.Security;
 using Asm.Dominio.Modulos.Core.Agregados.AsmAgentes;
+using Asm.Infra.Apolo;
 using AutoMapper.QueryableExtensions;
 
 namespace Asm.Aplicacion.Modulos.Core.AsmAgentes.Impl

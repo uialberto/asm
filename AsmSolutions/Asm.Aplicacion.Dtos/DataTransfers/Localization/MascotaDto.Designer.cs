@@ -22,7 +22,7 @@ namespace Asm.Aplicacion.Dtos.DataTransfers.Localization {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class MascotaDto {
+    internal class MascotaDto {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Asm.Aplicacion.Dtos.DataTransfers.Localization {
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Asm.Aplicacion.Dtos.DataTransfers.Localization.MascotaDto", typeof(MascotaDto).Assembly);
@@ -51,7 +51,7 @@ namespace Asm.Aplicacion.Dtos.DataTransfers.Localization {
         ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Asm.Aplicacion.Dtos.DataTransfers.Localization {
         /// <summary>
         ///   Busca una cadena traducida similar a Descripción ha superado el número de caracteres permitidos..
         /// </summary>
-        public static string DescripcionLengthError {
+        internal static string DescripcionLengthError {
             get {
                 return ResourceManager.GetString("DescripcionLengthError", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace Asm.Aplicacion.Dtos.DataTransfers.Localization {
         /// <summary>
         ///   Busca una cadena traducida similar a Dirección ha superado el número de caracteres permitidos..
         /// </summary>
-        public static string DireccionLengthError {
+        internal static string DireccionLengthError {
             get {
                 return ResourceManager.GetString("DireccionLengthError", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace Asm.Aplicacion.Dtos.DataTransfers.Localization {
         /// <summary>
         ///   Busca una cadena traducida similar a Color ha superado el tamaño maximo permitido.
         /// </summary>
-        public static string KeyColorLengthError {
+        internal static string KeyColorLengthError {
             get {
                 return ResourceManager.GetString("KeyColorLengthError", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace Asm.Aplicacion.Dtos.DataTransfers.Localization {
         /// <summary>
         ///   Busca una cadena traducida similar a Estado ha superado el tamaño maximo permitido.
         /// </summary>
-        public static string KeyEstadoLengthError {
+        internal static string KeyEstadoLengthError {
             get {
                 return ResourceManager.GetString("KeyEstadoLengthError", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace Asm.Aplicacion.Dtos.DataTransfers.Localization {
         /// <summary>
         ///   Busca una cadena traducida similar a Tamaño ha superado el tamaño maximo permitido..
         /// </summary>
-        public static string KeyTamanioLengthError {
+        internal static string KeyTamanioLengthError {
             get {
                 return ResourceManager.GetString("KeyTamanioLengthError", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace Asm.Aplicacion.Dtos.DataTransfers.Localization {
         /// <summary>
         ///   Busca una cadena traducida similar a Tipo animal ha superado el tamaño maximo permitido.
         /// </summary>
-        public static string KeyTipoAnimalLengthError {
+        internal static string KeyTipoAnimalLengthError {
             get {
                 return ResourceManager.GetString("KeyTipoAnimalLengthError", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace Asm.Aplicacion.Dtos.DataTransfers.Localization {
         /// <summary>
         ///   Busca una cadena traducida similar a Nombre ha superado el número de caracteres permitidos..
         /// </summary>
-        public static string NombreLengthError {
+        internal static string NombreLengthError {
             get {
                 return ResourceManager.GetString("NombreLengthError", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace Asm.Aplicacion.Dtos.DataTransfers.Localization {
         /// <summary>
         ///   Busca una cadena traducida similar a Raza ha superado el número de caracteres permitidos..
         /// </summary>
-        public static string RazaLengthError {
+        internal static string RazaLengthError {
             get {
                 return ResourceManager.GetString("RazaLengthError", resourceCulture);
             }
@@ -135,7 +135,7 @@ namespace Asm.Aplicacion.Dtos.DataTransfers.Localization {
         /// <summary>
         ///   Busca una cadena traducida similar a Raza.
         /// </summary>
-        public static string RazaTitulo {
+        internal static string RazaTitulo {
             get {
                 return ResourceManager.GetString("RazaTitulo", resourceCulture);
             }

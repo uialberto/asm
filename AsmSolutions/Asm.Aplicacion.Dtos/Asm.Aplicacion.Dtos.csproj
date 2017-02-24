@@ -46,6 +46,7 @@
       <DependentUpon>EntityDto.cs</DependentUpon>
     </Compile>
     <Compile Include="DataTransfers\AsmAgenteDto.cs" />
+    <Compile Include="DataTransfers\ClienteApiDto.cs" />
     <Compile Include="DataTransfers\Localization\AsmAgenteDto.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -61,11 +62,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DataTransfers\Localization\AsmAgenteDto.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
+      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>AsmAgenteDto.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DataTransfers\Localization\MascotaDto.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
+      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MascotaDto.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>

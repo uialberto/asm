@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Asm.Aplicacion.Dtos.DataTransfers.Localization {
+namespace Asm.Aplicacion.Helpers.Security.Localization {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace Asm.Aplicacion.Dtos.DataTransfers.Localization {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class AsmAgenteDto {
+    internal class AuthorizeAttribute {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal AsmAgenteDto() {
+        internal AuthorizeAttribute() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Asm.Aplicacion.Dtos.DataTransfers.Localization {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Asm.Aplicacion.Dtos.DataTransfers.Localization.AsmAgenteDto", typeof(AsmAgenteDto).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Asm.Aplicacion.Helpers.Security.Localization.AuthorizeAttribute", typeof(AuthorizeAttribute).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,47 +61,11 @@ namespace Asm.Aplicacion.Dtos.DataTransfers.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Apellidos ha superado el número de caracteres permitidos..
+        ///   Busca una cadena traducida similar a No Autorizado.
         /// </summary>
-        internal static string ApellidosLengthError {
+        internal static string NoAutorizado {
             get {
-                return ResourceManager.GetString("ApellidosLengthError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Celular ha superado el número de caracteres permitidos..
-        /// </summary>
-        internal static string CelularLengthError {
-            get {
-                return ResourceManager.GetString("CelularLengthError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Dirección ha superado el número de caracteres permitidos..
-        /// </summary>
-        internal static string DireccionLengthError {
-            get {
-                return ResourceManager.GetString("DireccionLengthError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Nombres ha superado el número de caracteres permitidos..
-        /// </summary>
-        internal static string NombresLengthError {
-            get {
-                return ResourceManager.GetString("NombresLengthError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Teléfono ha superado el número de caracteres permitidos..
-        /// </summary>
-        internal static string TelefonoLengthError {
-            get {
-                return ResourceManager.GetString("TelefonoLengthError", resourceCulture);
+                return ResourceManager.GetString("NoAutorizado", resourceCulture);
             }
         }
     }

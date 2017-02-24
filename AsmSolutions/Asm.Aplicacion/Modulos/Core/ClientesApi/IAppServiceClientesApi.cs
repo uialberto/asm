@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Asm.Aplicacion.Modulos.Seguridad.AppUsers
+namespace Asm.Aplicacion.Modulos.Core.ClientesApi
 {
-    public interface ISecurityService
+    interface IAppServiceClientesApi
     {
-        
     }
 }
