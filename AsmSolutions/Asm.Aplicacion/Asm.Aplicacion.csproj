@@ -143,6 +143,8 @@
     <Compile Include="Helpers\TestDataConfiguration.cs" />
     <Compile Include="Modulos\Core\AsmAgentes\IAppServiceAsmAgentes.cs" />
     <Compile Include="Modulos\Core\AsmAgentes\Impl\AppServiceAsmAgentes.cs" />
+    <Compile Include="Modulos\Core\ClientesApi\IAppServiceClientesApi.cs" />
+    <Compile Include="Modulos\Core\ClientesApi\Impl\AppServiceClientesApi.cs" />
     <Compile Include="Modulos\Core\Mascotas\Impl\AppServiceMascotas.cs" />
     <Compile Include="Modulos\Core\Mascotas\IAppServiceMascotas.cs" />
     <Compile Include="Helpers\Security\OAuthApiAuthorizationServerProvider.cs" />
