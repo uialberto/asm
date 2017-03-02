@@ -34,11 +34,6 @@ namespace Asm.Aplicacion.Modulos.Core.AsmAgentes.Impl
             {
                 #region Validaciones
 
-                if (string.IsNullOrWhiteSpace(dto?.Id))
-                {
-                    return result;
-                }
-
                 #endregion
 
                 #region Proceso

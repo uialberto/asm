@@ -30,7 +30,7 @@ namespace Asm.Dominio.Modulos.Core.Agregados.Mascotas
         public DateTime FechaCreacion { get; set; }
 
 
-        public string AsmAgenteId { get; set; }
+        public long AsmAgenteId { get; set; }
         public virtual AsmAgente AsmAgente { get; set; }
 
       

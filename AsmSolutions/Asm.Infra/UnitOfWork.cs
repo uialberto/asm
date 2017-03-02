@@ -26,14 +26,11 @@ namespace Asm.Infra
             Database.SetInitializer(new UnitOfWorkInitializer());
             Configuration.LazyLoadingEnabled = false;
         }
-
-        public UnitOfWork(string nameOrConnectionString)
-            : base(nameOrConnectionString)
+        public UnitOfWork(string nameOrConnectionString) : base(nameOrConnectionString)
         {
             Database.SetInitializer(new UnitOfWorkInitializer());
             Configuration.LazyLoadingEnabled = false;
         }
-
         public static UnitOfWork Create()
         {
             return new UnitOfWork();

@@ -49,7 +49,7 @@ namespace Asm.Infra.Modulos.Core.Mapping.ClientesApi
             Property(e => e.Active).HasColumnName("Activo");
 
             Property(e => e.Tipo).IsRequired();
-            Property(e => e.Tipo).HasColumnName("TipoApi");
+            Property(e => e.Tipo).HasColumnName("KeyTipoApi");
 
             Property(e => e.PermiteOrigin).IsOptional();
             Property(e => e.PermiteOrigin).HasColumnName("PermiteOrigina");

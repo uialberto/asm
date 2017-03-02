@@ -19,5 +19,16 @@ namespace Asm.Aplicacion.Helpers
                 return llave;
             }
         }
+
+        public static string KeyHeaderApiVersion
+        {
+            get
+            {
+                var llave = ConfigurationManager.AppSettings["ApiVersion.Header"];
+                if (string.IsNullOrEmpty(llave))
+                    throw new ConfigurationErrorsException("Llave de Web.config: ApiVersion.Header");
+                return llave;
+            }
+        }
     }
 }

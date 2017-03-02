@@ -30,7 +30,7 @@ namespace Asm.Infra.Test.TestUnit.Modulos.Core
             #region Act
 
             var target = RepoAsmAgentesHelperTest.CreateRepository();
-            var entityAdd = target.Get(dto.Id);
+            var entityAdd = target.Get(res.Id);
 
             #endregion
 

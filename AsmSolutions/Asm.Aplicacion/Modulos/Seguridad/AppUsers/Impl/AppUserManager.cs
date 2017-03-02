@@ -36,7 +36,8 @@ namespace Asm.Aplicacion.Modulos.Seguridad.AppUsers.Impl
             manager.UserValidator = new UserValidator<AppUser>(manager)
             {
                 AllowOnlyAlphanumericUserNames = false,
-                RequireUniqueEmail = true
+                RequireUniqueEmail = true,
+                                                
             };
             manager.PasswordValidator = new PasswordValidator
             {

@@ -58,6 +58,12 @@
       <DependentUpon>MascotaDto.resx</DependentUpon>
     </Compile>
     <Compile Include="DataTransfers\MascotaDto.cs" />
+    <Compile Include="ModelView\Localization\RegisterAsmDto.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegisterAsmDto.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ModelView\RegisterAsmDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -68,6 +74,10 @@
     <EmbeddedResource Include="DataTransfers\Localization\MascotaDto.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MascotaDto.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModelView\Localization\RegisterAsmDto.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RegisterAsmDto.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

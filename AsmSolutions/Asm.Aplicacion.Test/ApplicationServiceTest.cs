@@ -17,6 +17,7 @@ namespace Asm.Aplicacion.Test
         {
             AutoMapperConfiguration.Initialize();
             IoCUnityConfiguration.Initialize();
+            IoCUnityConfiguration.ConfigureTestAplications();
 
         }
 

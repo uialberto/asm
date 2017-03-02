@@ -21,7 +21,7 @@ namespace Asm.Infra.Modulos.Core.Mapping.AsmAgentes
             HasKey(e => e.Id);
             ToTable("core.AsmAgentes");
 
-            Property(e => e.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
+            Property(e => e.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             // Propiedades escalares
             Property(e => e.Id).HasColumnName("IdAgente");
