@@ -45,13 +45,13 @@ namespace Asm.Aplicacion.Test.Modulos.Seguridad
 
             #region Act
 
-            var result = target.RegisterAsync(dtoUser);
+            var result = target.Register(dtoUser);
 
             #endregion
 
             #region Assert
 
-            Assert.IsTrue(result.Result > 0, "Error: RegisterAsyncTest. Logica no cumple el criterio de Assert");
+            Assert.IsTrue(result > 0, "Error: RegisterAsyncTest. Logica no cumple el criterio de Assert");
 
 
             #endregion

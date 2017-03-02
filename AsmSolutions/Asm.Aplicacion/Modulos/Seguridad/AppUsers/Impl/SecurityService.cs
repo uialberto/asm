@@ -24,6 +24,7 @@ namespace Asm.Aplicacion.Modulos.Seguridad.AppUsers.Impl
         private AppSignInManager _appSignInManager;
         private IAppPrincipalProvider _principalProvider;
         private IAuthenticationManager _authentication;
+        private IRepoAsmAgentes _asmAgentes;
 
         #endregion
 
@@ -33,17 +34,23 @@ namespace Asm.Aplicacion.Modulos.Seguridad.AppUsers.Impl
         {
             var unitOfWork = IoCUnityConfiguration.UnityManager.Resolve<IUnitOfWork>() as UnitOfWork;
 
+            var pAsmAgentes = IoCUnityConfiguration.UnityManager.Resolve<IRepoAsmAgentes>();
+
             if (unitOfWork == null)
                 throw new ArgumentNullException(nameof(unitOfWork));
 
+            if (pAsmAgentes == null)
+                throw new ArgumentNullException(nameof(pAsmAgentes));
+
             _appUserManager = new AppUserManager(new UserStore<AppUser>(unitOfWork));
+            _asmAgentes = pAsmAgentes;
 
         }
 
         public SecurityService(IAuthenticationManager authentication)
         {
             var unitOfWork = IoCUnityConfiguration.UnityManager.Resolve<IUnitOfWork>() as UnitOfWork;
-
+            var pAsmAgentes = IoCUnityConfiguration.UnityManager.Resolve<IRepoAsmAgentes>();
 
             if (unitOfWork == null)
                 throw new ArgumentNullException(nameof(unitOfWork));
@@ -51,9 +58,12 @@ namespace Asm.Aplicacion.Modulos.Seguridad.AppUsers.Impl
             if (authentication == null)
                 throw new ArgumentNullException(nameof(authentication));
 
+            if (pAsmAgentes == null)
+                throw new ArgumentNullException(nameof(pAsmAgentes));
+
             _appUserManager = new AppUserManager(new UserStore<AppUser>(unitOfWork));
             _appSignInManager = new AppSignInManager(_appUserManager, authentication);
-
+            _asmAgentes = pAsmAgentes;
         }
 
         public SecurityService(IAuthenticationManager authentication, IAppPrincipalProvider principalProvider)
@@ -78,34 +88,29 @@ namespace Asm.Aplicacion.Modulos.Seguridad.AppUsers.Impl
 
         #endregion
 
-        public async Task<int> RegisterAsync(RegisterAsmDto dto)
+        #region Core
+
+        public long Register(RegisterAsmDto dto)
         {
-            var result = -1;
+            long result = -1;
             try
             {
-                var userapp = new AppUser()
+                var entity = new AsmAgente()
                 {
-                    Email = dto.Email,
-                    UserName = dto.Username,
-                    AsmAgentes = new List<AsmAgente>()
+                    Nombres = dto.Nombres,
+                    Apellidos = dto.Apellidos,
+                    User = new AppUser()
                     {
-                        new AsmAgente()
-                        {                 
-                            Nombres = dto.Nombres,
-                            Apellidos = dto.Apellidos
-                        }
+                        UserName = dto.Username,
+                        Email = dto.Email,
+                        PasswordHash = new PasswordHasher().HashPassword(dto.Password),
                     }
                 };
 
-                var user = await _appUserManager.CreateAsync(userapp,dto.Password);
-                if (user.Errors.Any())
-                {
-                    // ToDo #issue10
-                    return result;
-                }
-                if (user.Succeeded)
-                    result = 1;
-
+                var unitOfWork = _asmAgentes.UnitOfWork;
+                _asmAgentes.Add(entity);
+                unitOfWork.SaveChanges();
+                result = entity.Id;
             }
             catch (Exception ex)
             {
@@ -113,5 +118,8 @@ namespace Asm.Aplicacion.Modulos.Seguridad.AppUsers.Impl
             }
             return result;
         }
+
+        #endregion
+
     }
 }

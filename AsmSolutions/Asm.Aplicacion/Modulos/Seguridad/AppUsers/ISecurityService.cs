@@ -8,7 +8,7 @@ using Asm.Aplicacion.Dtos.ModelView;
 namespace Asm.Aplicacion.Modulos.Seguridad.AppUsers
 {
     public interface ISecurityService
-    {        
-        Task<int> RegisterAsync(RegisterAsmDto dto);
+    {             
+        long Register(RegisterAsmDto dto);
     }
 }

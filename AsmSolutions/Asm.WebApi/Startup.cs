@@ -10,6 +10,8 @@ using Asm.WebApi.Helpers;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Practices.Unity;
+using Microsoft.Web.Http;
+using Microsoft.Web.Http.Versioning;
 using Owin;
 
 [assembly: OwinStartup(typeof(Asm.WebApi.Startup))]
@@ -22,6 +24,19 @@ namespace Asm.WebApi
         {
             // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=316888
             var config = new HttpConfiguration();
+
+            #region Configuracion ApiVersion
+
+            config.AddApiVersioning(o =>
+            {
+                o.ReportApiVersions = true;
+                o.AssumeDefaultVersionWhenUnspecified = true;
+                o.DefaultApiVersion = new ApiVersion(1, 0);
+                o.ApiVersionReader = new HeaderApiVersionReader(KeyConfiguration.KeyHeaderApiVersion);
+            }
+           );
+
+            #endregion
 
             #region Registrar Configuraciones
             //AreaRegistration.RegisterAllAreas();
