@@ -8,7 +8,7 @@ using Asm.Aplicacion.Dtos.Apolo.Dtos;
 
 namespace Asm.Aplicacion.Dtos.DataTransfers
 {
-    public partial class AsmAgenteDto : EntityDto<string>
+    public partial class AsmAgenteDto : EntityDto<long>
     {
         public AsmAgenteDto() : base()
         {

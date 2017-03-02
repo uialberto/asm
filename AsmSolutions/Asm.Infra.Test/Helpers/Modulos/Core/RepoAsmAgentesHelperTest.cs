@@ -27,18 +27,27 @@ namespace Asm.Infra.Test.Helpers.Modulos.Core
         }
         public static AsmAgente Create(AsmAgente dto)
         {
-            var repo = CreateRepository();
-            var entity = dto;
-            var unitOfWork = repo.UnitOfWork;
-            repo.Add(entity);
-            unitOfWork.SaveChanges();
-            return entity;
+            AsmAgente result = null;
+            try
+            {
+                var repo = CreateRepository();
+                var entity = dto;
+                var unitOfWork = repo.UnitOfWork;
+                repo.Add(entity);
+                unitOfWork.SaveChanges();
+                result = entity;
+            }
+            catch (Exception ex)
+            {
+                var mensaje = ex.Message;
+            }
+            return result;
         }
         public static AsmAgente Get()
         {
             var result = new AsmAgente()
             {
-                Id = UtilitariosBase.NewGuid(),
+                Id = 1,
                 Nombres = UtilitariosBase.NewGuid(),
                 User = new AppUser()
                 {
@@ -46,7 +55,6 @@ namespace Asm.Infra.Test.Helpers.Modulos.Core
                     UserName = UtilitariosBase.NewGuid().Substring(8),
                     PasswordHash = new PasswordHasher().HashPassword("uibasoft"),
                     Email = UtilitariosBase.NewGuid().Substring(5) + "@uibasoft.com"
-
                 }
                 // Otras propiedades requeridas...
             };

@@ -14,6 +14,7 @@ namespace Asm.Aplicacion.Dtos.DataTransfers
         {
 
         }
+
         [MaxLength(50, ErrorMessageResourceName = "NombreLengthError", ErrorMessageResourceType = typeof(Localization.MascotaDto))]
         [Required]
         public string Nombre { get; set; }
@@ -24,7 +25,6 @@ namespace Asm.Aplicacion.Dtos.DataTransfers
         public bool? EsMacho { get; set; }
 
         [MaxLength(30, ErrorMessageResourceName = "RazaLengthError", ErrorMessageResourceType = typeof(Localization.MascotaDto))]
-        [Display(ResourceType = typeof(Localization.MascotaDto), Name = "RazaTitulo")]
         public string Raza { get; set; }
         public decimal? Longitud { get; set; }
         public decimal? Latitud { get; set; }

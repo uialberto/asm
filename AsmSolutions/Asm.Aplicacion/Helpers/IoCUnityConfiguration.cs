@@ -66,6 +66,19 @@ namespace Asm.Aplicacion.Helpers
 
         }
 
+        public static void ConfigureTestAplications()
+        {
+            var unityContainer = UnityManager;
+
+            #region UnitOfWork
+            //unityContainer.RegisterType<IAppPrincipalProvider, AppPrincipalProvider>();
+            unityContainer.RegisterType<ISecurityService, SecurityService>();
+
+            #endregion
+
+
+        }
+
         public static UnityContainer UnityManager => _unityContainer ?? (_unityContainer = new UnityContainer());
 
 

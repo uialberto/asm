@@ -9,7 +9,7 @@ using Asm.Dominio.Modulos.Seguridad.Agregados.AppUsers;
 
 namespace Asm.Dominio.Modulos.Core.Agregados.AsmAgentes
 {
-    public partial class AsmAgente : Entity<string>
+    public partial class AsmAgente : Entity<long>
     {
         public AsmAgente() : base()
         {

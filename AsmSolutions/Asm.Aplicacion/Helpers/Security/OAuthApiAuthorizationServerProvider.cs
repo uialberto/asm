@@ -18,7 +18,7 @@ using LocalizedText = Asm.Aplicacion.Helpers.Security.Localization.OAuthApiAutho
 namespace Asm.Aplicacion.Helpers.Security
 {
     public class OAuthApiAuthorizationServerProvider : OAuthAuthorizationServerProvider
-    {        
+    {
         public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
             // ToDo...issue9
