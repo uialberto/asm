@@ -8,8 +8,8 @@ using System.Linq.Dynamic;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using Asm.Dominio.Apolo.Repositories;
-using Asm.Dominio.Apolo.UoW;
+using Asm.Apolo.Dom.Repositories;
+using Asm.Apolo.Dom.UoW;
 using Asm.Infra.Apolo;
 
 namespace Asm.Infra

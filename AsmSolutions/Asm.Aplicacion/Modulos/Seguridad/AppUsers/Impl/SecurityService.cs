@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Asm.Aplicacion.Dtos.ModelView;
 using Asm.Aplicacion.Helpers;
 using Asm.Aplicacion.Helpers.Security;
-using Asm.Dominio.Apolo.UoW;
 using Asm.Dominio.Modulos.Core.Agregados.AsmAgentes;
 using Asm.Dominio.Modulos.Seguridad.Agregados.AppUsers;
 using Asm.Infra;
@@ -13,6 +12,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using Microsoft.Practices.Unity;
+using Asm.Apolo.Dom.UoW;
 
 namespace Asm.Aplicacion.Modulos.Seguridad.AppUsers.Impl
 {

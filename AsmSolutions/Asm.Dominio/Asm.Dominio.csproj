@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Asm.Apolo.Dom, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Asm.Apolo.Dom.1.0.0\lib\net461\Asm.Apolo.Dom.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -57,16 +61,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Apolo\Entities\Entity.cs" />
-    <Compile Include="Apolo\Entities\Entity.TKey.cs">
-      <DependentUpon>Entity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Apolo\Entities\IEntity.cs" />
-    <Compile Include="Apolo\Entities\IEntity.TKey.cs">
-      <DependentUpon>IEntity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Apolo\Repositories\IRepository.cs" />
-    <Compile Include="Apolo\UoW\IUnitOfWork.cs" />
     <Compile Include="Modulos\Core\Agregados\AsmAgentes\AsmAgente.cs" />
     <Compile Include="Modulos\Core\Agregados\AsmAgentes\IRepoAsmAgentes.cs" />
     <Compile Include="Modulos\Core\Agregados\ClientesApi\ClienteApi.cs" />

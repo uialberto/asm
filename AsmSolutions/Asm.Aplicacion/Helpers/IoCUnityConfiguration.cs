@@ -10,7 +10,7 @@ using Asm.Aplicacion.Modulos.Core.Mascotas;
 using Asm.Aplicacion.Modulos.Core.Mascotas.Impl;
 using Asm.Aplicacion.Modulos.Seguridad.AppUsers;
 using Asm.Aplicacion.Modulos.Seguridad.AppUsers.Impl;
-using Asm.Dominio.Apolo.UoW;
+using Asm.Apolo.Dom.UoW;
 using Asm.Dominio.Modulos.Core.Agregados.AsmAgentes;
 using Asm.Dominio.Modulos.Core.Agregados.Mascotas;
 using Asm.Infra;

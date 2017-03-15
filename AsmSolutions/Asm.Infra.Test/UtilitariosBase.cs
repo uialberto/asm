@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Asm.Dominio.Apolo.Entities;
-using Asm.Dominio.Apolo.Repositories;
+using Asm.Apolo.Dom.Entities;
+using Asm.Apolo.Dom.Repositories;
 
 namespace Asm.Infra.Test
 {

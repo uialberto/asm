@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Asm.Dominio.Apolo.Entities;
+using Asm.Apolo.Dom.Entities;
 using Asm.Dominio.Modulos.Core.Agregados.AsmAgentes;
 
 namespace Asm.Dominio.Modulos.Core.Agregados.Mascotas
@@ -33,7 +33,7 @@ namespace Asm.Dominio.Modulos.Core.Agregados.Mascotas
         public long AsmAgenteId { get; set; }
         public virtual AsmAgente AsmAgente { get; set; }
 
-      
+
 
 
     }

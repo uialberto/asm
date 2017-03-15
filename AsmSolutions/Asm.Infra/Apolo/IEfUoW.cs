@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Asm.Dominio.Apolo.UoW;
+using Asm.Apolo.Dom.UoW;
 
 namespace Asm.Infra.Apolo
 {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Asm.Dominio.Apolo.Entities;
+using Asm.Apolo.Dom.Entities;
 using Asm.Dominio.Modulos.Core.Agregados.Mascotas;
 using Asm.Dominio.Modulos.Seguridad.Agregados.AppUsers;
 

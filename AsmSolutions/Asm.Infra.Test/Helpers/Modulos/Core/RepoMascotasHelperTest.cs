@@ -4,7 +4,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Asm.Dominio.Apolo.Repositories;
+using Asm.Apolo.Dom.Repositories;
 using Asm.Dominio.Modulos.Core.Agregados.AsmAgentes;
 using Asm.Dominio.Modulos.Core.Agregados.Mascotas;
 using Asm.Infra.Modulos.Core.Repositorios;
