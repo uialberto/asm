@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Asm.Aplicacion.Apolo.Services;
 using Asm.Aplicacion.Dtos.DataTransfers;
+using Asm.Apolo.Core.Result;
 
 namespace Asm.Aplicacion.Modulos.Core.Mascotas
 {
     public interface IAppServiceMascotas
     {
-        List<MascotaDto> MascotasOlvidadas();
+        ResultList<MascotaDto> MascotasOlvidadas();
     }
 }

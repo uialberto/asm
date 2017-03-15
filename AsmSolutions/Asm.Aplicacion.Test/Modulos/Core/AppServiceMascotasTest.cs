@@ -46,8 +46,8 @@ namespace Asm.Aplicacion.Test.Modulos.Core
             #endregion
 
             #region Assert
-            Assert.IsTrue(result.Count == 10);
-            Assert.IsTrue(result.ToList().All(ele => ele.KeyEstado.ToUpper() == Mascota.KeyEstadoPendiente),
+            Assert.IsTrue(result.TotalElements == 10);
+            Assert.IsTrue(result.Elements.ToList().All(ele => ele.KeyEstado.ToUpper() == Mascota.KeyEstadoPendiente),
                 "La prueba MascotasOlvidadas no cumple el criterio de seleccion.");
 
             #endregion

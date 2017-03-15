@@ -25,7 +25,7 @@ namespace Asm.Aplicacion.Test.Modulos.Seguridad
         }
 
         [TestMethod]
-        public void RegisterAsyncTest()
+        public void RegisterTest()
         {
             #region Arrange
 
@@ -51,7 +51,8 @@ namespace Asm.Aplicacion.Test.Modulos.Seguridad
 
             #region Assert
 
-            Assert.IsTrue(result > 0, "Error: RegisterAsyncTest. Logica no cumple el criterio de Assert");
+            Assert.IsFalse(result.HasErrors, "Error: RegisterTest. Logica no cumple el criterio de Assert");
+            Assert.IsTrue(result.Element > 0, "Error: RegisterTest. Logica no cumple el criterio de Assert");
 
 
             #endregion
