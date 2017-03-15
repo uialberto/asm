@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Asm.Aplicacion.Modulos.Seguridad.AppUsers.Impl;
-using Asm.Dominio.Apolo.UoW;
 using Asm.Dominio.Modulos.Seguridad.Agregados.AppUsers;
 using Asm.Infra;
 using Microsoft.AspNet.Identity;

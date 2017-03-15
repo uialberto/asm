@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Asm.Aplicacion.Dtos.ModelView;
 using Asm.Aplicacion.Helpers;
 using Asm.Aplicacion.Helpers.Security;
-using Asm.Dominio.Apolo.UoW;
+using Asm.Apolo.Core.Result;
 using Asm.Dominio.Modulos.Core.Agregados.AsmAgentes;
 using Asm.Dominio.Modulos.Seguridad.Agregados.AppUsers;
 using Asm.Infra;
@@ -13,6 +13,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using Microsoft.Practices.Unity;
+using Asm.Apolo.Dom.UoW;
+using LocalizedText = Asm.Aplicacion.Modulos.Seguridad.AppUsers.Impl.Localization.SecurityService;
 
 namespace Asm.Aplicacion.Modulos.Seguridad.AppUsers.Impl
 {
@@ -90,31 +92,63 @@ namespace Asm.Aplicacion.Modulos.Seguridad.AppUsers.Impl
 
         #region Core
 
-        public long Register(RegisterAsmDto dto)
+        public ResultElement<long> Register(RegisterAsmDto dto)
         {
-            long result = -1;
+            var result = new ResultElement<long>();
             try
             {
-                var entity = new AsmAgente()
+                #region Validaciones
+
+                _appUserManager.UserValidator = new UserValidator<AppUser>(_appUserManager)
+                {
+                    AllowOnlyAlphanumericUserNames = false,
+                    RequireUniqueEmail = true,
+
+                };
+                _appUserManager.PasswordValidator = new PasswordValidator
+                {
+                    RequiredLength = 5,
+                    RequireDigit = true,
+                };
+
+
+                #endregion
+
+                #region Proceso
+
+                var user = new AppUser()
+                {
+                    UserName = dto.Username,
+                    Email = dto.Email,
+                    AsmAgentes = new List<AsmAgente>()
+                };
+
+                var agente = new AsmAgente
                 {
                     Nombres = dto.Nombres,
                     Apellidos = dto.Apellidos,
-                    User = new AppUser()
-                    {
-                        UserName = dto.Username,
-                        Email = dto.Email,
-                        PasswordHash = new PasswordHasher().HashPassword(dto.Password),
-                    }
                 };
+                user.AsmAgentes.Add(agente);
 
-                var unitOfWork = _asmAgentes.UnitOfWork;
-                _asmAgentes.Add(entity);
-                unitOfWork.SaveChanges();
-                result = entity.Id;
+
+
+                var res = _appUserManager.Create(user, dto.Password);
+                if (!res.Succeeded)
+                {
+                    // ToDo Personalizar mensajes...
+                    //result.Errors.Add(LocalizedText.ErrorRegisterValidations);
+                    result.Errors.AddRange(res.Errors);
+                }
+
+                result.Element = agente.Id;
+
+                #endregion
+
             }
             catch (Exception ex)
             {
                 var mensaje = ex.Message;
+                result.Errors.Add(mensaje);
             }
             return result;
         }

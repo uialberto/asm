@@ -4,8 +4,6 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Asm.Dominio.Apolo.Entities;
-using Asm.Dominio.Apolo.Repositories;
 
 namespace Asm.Infra.Test
 {

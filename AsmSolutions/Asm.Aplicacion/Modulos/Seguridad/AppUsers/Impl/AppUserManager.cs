@@ -2,7 +2,7 @@
 using System;
 using System.Threading.Tasks;
 using Asm.Aplicacion.Helpers;
-using Asm.Dominio.Apolo.UoW;
+using Asm.Apolo.Dom.UoW;
 using Asm.Dominio.Modulos.Seguridad.Agregados.AppUsers;
 using Asm.Infra;
 using Microsoft.AspNet.Identity.EntityFramework;

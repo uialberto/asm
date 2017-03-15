@@ -6,7 +6,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Asm.Dominio.Apolo.UoW;
+using Asm.Apolo.Dom.UoW;
 using Asm.Dominio.Modulos.Seguridad.Agregados.AppUsers;
 using Asm.Infra.Apolo;
 using Microsoft.AspNet.Identity.EntityFramework;

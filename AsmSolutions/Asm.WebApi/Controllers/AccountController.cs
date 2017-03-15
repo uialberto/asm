@@ -10,6 +10,7 @@ using Asm.Aplicacion.Dtos.ModelView;
 using Asm.Aplicacion.Helpers;
 using Asm.Aplicacion.Modulos.Core.AsmAgentes;
 using Asm.Aplicacion.Modulos.Seguridad.AppUsers.Impl;
+using Asm.WebApi.Controllers.Localization;
 using Microsoft.Practices.Unity;
 using Microsoft.Web.Http;
 
@@ -25,6 +26,7 @@ namespace Asm.WebApi.Controllers
         {
             Security = new SecurityService(HttpContext.Current.GetOwinContext().Authentication);
         }
+
         [AllowAnonymous]
         [Route("register")]
         [HttpPost]
@@ -36,7 +38,7 @@ namespace Asm.WebApi.Controllers
             {
                 var message = new HttpResponseMessage(HttpStatusCode.BadRequest)
                 {
-                    Content = new StringContent("Todos los datos son requerido.")
+                    Content = new StringContent(LocalizedText.AllRequeridos)
                 };
                 throw new HttpResponseException(message);
             }
@@ -47,17 +49,23 @@ namespace Asm.WebApi.Controllers
 
             var result = Security.Register(param);
 
-            if ((result <= 0))
+            if ((result.HasErrors))
             {
-                var literalize = "Ha ocurrido error a registrar.";
+                var literalizeErrors = string.Join(",", result.Errors.ToArray());
                 var error = new HttpResponseMessage(HttpStatusCode.BadRequest)
                 {
-                    Content = new StringContent(literalize)
+                    Content = new StringContent(literalizeErrors)
                 };
                 throw new HttpResponseException(error);
             }
 
-            return Ok(result);
+            return Ok(new
+            {
+                Data = new
+                {
+                    Codigo = result.Element
+                }
+            });
 
             #endregion
         }
