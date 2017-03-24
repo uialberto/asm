@@ -12,9 +12,6 @@ namespace Asm.Infra
         protected override void Seed(UnitOfWork context)
         {
             base.Seed(context);
-
-            // Initializer
-
             context.SaveChanges();
 
 
