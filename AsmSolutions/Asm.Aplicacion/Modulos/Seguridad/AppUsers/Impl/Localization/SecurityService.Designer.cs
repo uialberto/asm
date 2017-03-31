@@ -61,11 +61,56 @@ namespace Asm.Aplicacion.Modulos.Seguridad.AppUsers.Impl.Localization {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Apellidos es un dato requerido..
+        /// </summary>
+        internal static string ApellidosRequerido {
+            get {
+                return ResourceManager.GetString("ApellidosRequerido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Correo es un dato requerido..
+        /// </summary>
+        internal static string EmailRequerido {
+            get {
+                return ResourceManager.GetString("EmailRequerido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Se ha producido un error en el proceso de registro. Verifique los datos ingresados..
         /// </summary>
         internal static string ErrorRegisterValidations {
             get {
                 return ResourceManager.GetString("ErrorRegisterValidations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nombres es un dato requerido..
+        /// </summary>
+        internal static string NombresRequerido {
+            get {
+                return ResourceManager.GetString("NombresRequerido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Contraseña es un dato requerido..
+        /// </summary>
+        internal static string PasswordRequerido {
+            get {
+                return ResourceManager.GetString("PasswordRequerido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Usuario es un dato requerido..
+        /// </summary>
+        internal static string UsernameRequerido {
+            get {
+                return ResourceManager.GetString("UsernameRequerido", resourceCulture);
             }
         }
     }

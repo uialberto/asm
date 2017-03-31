@@ -117,7 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ApellidosRequerido" xml:space="preserve">
+    <value>Apellidos es un dato requerido.</value>
+  </data>
+  <data name="EmailRequerido" xml:space="preserve">
+    <value>Correo es un dato requerido.</value>
+  </data>
   <data name="ErrorRegisterValidations" xml:space="preserve">
     <value>Se ha producido un error en el proceso de registro. Verifique los datos ingresados.</value>
+  </data>
+  <data name="NombresRequerido" xml:space="preserve">
+    <value>Nombres es un dato requerido.</value>
+  </data>
+  <data name="PasswordRequerido" xml:space="preserve">
+    <value>Contraseña es un dato requerido.</value>
+  </data>
+  <data name="UsernameRequerido" xml:space="preserve">
+    <value>Usuario es un dato requerido.</value>
   </data>
 </root>
