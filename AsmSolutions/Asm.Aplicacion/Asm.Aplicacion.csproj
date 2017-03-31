@@ -137,6 +137,7 @@
     <Compile Include="Helpers\AutoMapperConfiguration.cs" />
     <Compile Include="Helpers\IoCUnityConfiguration.cs" />
     <Compile Include="Helpers\KeyConfiguration.cs" />
+    <Compile Include="Helpers\Security\AsmRefreshTokenProvider.cs" />
     <Compile Include="Helpers\Security\IAppPrincipalProvider.cs" />
     <Compile Include="Helpers\Security\Localization\AuthorizeAttribute.Designer.cs">
       <AutoGen>True</AutoGen>

@@ -33,12 +33,15 @@ namespace Asm.WebApi
 
             #region UseOAuthBearerAuthentication
 
+            var value = KeyConfiguration.KeyAccessTokenExpireMin;
+
             var oAuthServerOptions = new OAuthAuthorizationServerOptions()
             {
                 AllowInsecureHttp = true, //ToDo Modificar en Produccion
                 TokenEndpointPath = new PathString(UrlToken),
-                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(20),
+                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(value),
                 Provider = new OAuthApiAuthorizationServerProvider(),
+                RefreshTokenProvider = new AsmRefreshTokenProvider()
             };
 
             var authOptions = new OAuthBearerAuthenticationOptions()

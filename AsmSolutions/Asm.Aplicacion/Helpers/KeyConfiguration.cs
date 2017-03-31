@@ -9,6 +9,34 @@ namespace Asm.Aplicacion.Helpers
 {
     public class KeyConfiguration
     {
+        public static int KeyAccessTokenExpireMin
+        {
+            get
+            {
+                int value = 15;
+                var llave = ConfigurationManager.AppSettings["KeyAccessTokenExpireMin"];
+                if (string.IsNullOrEmpty(llave))
+                    return value;
+
+                int.TryParse(llave, out value);
+                return value;
+            }
+        }
+
+        public static int KeyRefreshTokenExpireMin
+        {
+            get
+            {
+                int value = 30;
+                var llave = ConfigurationManager.AppSettings["RefreshTokenExpireMin"];
+                if (string.IsNullOrEmpty(llave))
+                    return value;
+
+                int.TryParse(llave, out value);
+                return value;
+            }
+        }
+
         public static string KeyTokenUrl
         {
             get
