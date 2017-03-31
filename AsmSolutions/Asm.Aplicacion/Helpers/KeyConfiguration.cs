@@ -19,7 +19,16 @@ namespace Asm.Aplicacion.Helpers
                 return llave;
             }
         }
-
+        public static string KeyRolPublic
+        {
+            get
+            {
+                var llave = ConfigurationManager.AppSettings["KeyRolPublic"];
+                if (string.IsNullOrEmpty(llave))
+                    return "public";
+                return llave;
+            }
+        }
         public static string KeyHeaderApiVersion
         {
             get

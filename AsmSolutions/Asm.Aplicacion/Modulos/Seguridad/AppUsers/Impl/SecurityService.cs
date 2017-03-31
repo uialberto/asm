@@ -99,6 +99,36 @@ namespace Asm.Aplicacion.Modulos.Seguridad.AppUsers.Impl
             {
                 #region Validaciones
 
+                if (string.IsNullOrWhiteSpace(dto?.Nombres))
+                {
+                    result.Errors.Add(LocalizedText.NombresRequerido);
+                    return result;
+                }
+
+                if (string.IsNullOrWhiteSpace(dto?.Apellidos))
+                {
+                    result.Errors.Add(LocalizedText.ApellidosRequerido);
+                    return result;
+                }
+
+                if (string.IsNullOrWhiteSpace(dto?.Email))
+                {
+                    result.Errors.Add(LocalizedText.EmailRequerido);
+                    return result;
+                }
+
+                if (string.IsNullOrWhiteSpace(dto?.Username))
+                {
+                    result.Errors.Add(LocalizedText.UsernameRequerido);
+                    return result;
+                }
+
+                if (string.IsNullOrWhiteSpace(dto?.Password))
+                {
+                    result.Errors.Add(LocalizedText.PasswordRequerido);
+                    return result;
+                }
+
                 _appUserManager.UserValidator = new UserValidator<AppUser>(_appUserManager)
                 {
                     AllowOnlyAlphanumericUserNames = false,
@@ -128,9 +158,27 @@ namespace Asm.Aplicacion.Modulos.Seguridad.AppUsers.Impl
                     Nombres = dto.Nombres,
                     Apellidos = dto.Apellidos,
                 };
+
                 user.AsmAgentes.Add(agente);
 
+                #region Asignacion Rol Public
 
+                var context = IoCUnityConfiguration.UnityManager.Resolve<IUnitOfWork>() as UnitOfWork;
+
+                if (context == null)
+                    throw new ArgumentNullException(nameof(context));
+                var keyRolPublic = KeyConfiguration.KeyRolPublic;
+                var rolPublic = context.Roles.FirstOrDefault(ele => ele.Id.ToLower() == keyRolPublic.ToLower());
+                if (rolPublic != null)
+                {
+                    user.Roles.Add(new IdentityUserRole()
+                    {
+                        RoleId = rolPublic.Id,
+                        UserId = user.Id
+                    });
+                }
+
+                #endregion
 
                 var res = _appUserManager.Create(user, dto.Password);
                 if (!res.Succeeded)
@@ -141,6 +189,8 @@ namespace Asm.Aplicacion.Modulos.Seguridad.AppUsers.Impl
                 }
 
                 result.Element = agente.Id;
+
+
 
                 #endregion
 
