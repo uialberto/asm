@@ -10,7 +10,10 @@ namespace Asm.Dominio.Modulos.Core.Agregados.Mascotas
 {
     public partial class Mascota : Entity<long>
     {
+        public const string KeyEstadoCreado = "C";
         public const string KeyEstadoPendiente = "P";
+        public const string KeyEstadoAdptado = "A";
+
         public Mascota() : base()
         {
 

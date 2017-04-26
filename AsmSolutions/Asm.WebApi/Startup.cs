@@ -22,7 +22,7 @@ namespace Asm.WebApi
     {
         public void Configuration(IAppBuilder app)
         {
-            // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=316888
+
             var config = new HttpConfiguration();
 
             #region Configuracion ApiVersion
@@ -42,11 +42,13 @@ namespace Asm.WebApi
             //AreaRegistration.RegisterAllAreas();
             #endregion
 
+            #region Initialize
+
             WebApiConfig.Register(config);
-
             IoCUnityInitialize.Initialize();
-
             AutoMapperConfiguration.Initialize();
+
+            #endregion
 
             ConfigureOAuth(app);
 
@@ -55,7 +57,6 @@ namespace Asm.WebApi
             app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
 
             app.UseWebApi(config);
-
 
 
         }
