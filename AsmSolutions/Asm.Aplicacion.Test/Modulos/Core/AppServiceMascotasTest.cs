@@ -8,6 +8,7 @@ using Asm.Aplicacion.Modulos.Core.Mascotas.Impl;
 using Asm.Dominio.Modulos.Core.Agregados.Mascotas;
 using Asm.Infra.Test.Helpers.Modulos.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Asm.Infra.Test;
 
 namespace Asm.Aplicacion.Test.Modulos.Core
 {
@@ -49,6 +50,50 @@ namespace Asm.Aplicacion.Test.Modulos.Core
             Assert.IsTrue(result.TotalElements == 10);
             Assert.IsTrue(result.Elements.ToList().All(ele => ele.KeyEstado.ToUpper() == Mascota.KeyEstadoPendiente),
                 "La prueba MascotasOlvidadas no cumple el criterio de seleccion.");
+
+            #endregion
+
+        }
+
+        [TestMethod]
+        public void CantidadMascotasOlvidadasTest()
+        {
+            #region Arrange
+
+            var target = CreateAppServices();
+
+            for (int i = 1; i <= 10; i++)
+            {
+                Mascota entity = null;
+                if ((i % 10) == 0)
+                {
+                    entity = RepoMascotasHelperTest.Get();
+                    entity.KeyEstado = "P";
+                }
+                else
+                {
+                    entity = RepoMascotasHelperTest.Get();
+                    entity.KeyEstado = "C";
+                }
+
+                var res = RepoMascotasHelperTest.Create(entity);
+
+            }
+
+
+            #endregion
+
+            #region Act
+
+            var result = target.CantidadMascotasOlvidadas();
+
+            #endregion
+
+            #region Assert
+            Assert.IsTrue(result.Element > 0);
+
+            Assert.IsTrue(result.Element == 5, "La prueba MascotasOlvidadas no cumple el criterio de seleccion.");
+
 
             #endregion
 

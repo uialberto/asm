@@ -26,6 +26,25 @@ namespace Asm.Aplicacion.Modulos.Core.Mascotas.Impl
 
             Repository = pRepository;
         }
+
+        public ResultElement<long> CantidadMascotasOlvidadas()
+        {
+            var result = new ResultElement<long>();
+            try
+            {
+                var cantidad = Repository.Filtrar(ele => ele.KeyEstado.ToUpper() == Mascota.KeyEstadoPendiente ||
+                                                    ele.KeyEstado.ToUpper() == Mascota.KeyEstadoCreado).Count();
+                result.Element = cantidad;
+
+            }
+            catch (Exception ex)
+            {
+                var mensaje = ex.Message;
+                result.Errors.Add(mensaje);
+            }
+            return result;
+        }
+
         public ResultList<MascotaDto> MascotasOlvidadas()
         {
             var result = new ResultList<MascotaDto>();

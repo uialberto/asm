@@ -12,5 +12,6 @@ namespace Asm.Aplicacion.Modulos.Core.Mascotas
     public interface IAppServiceMascotas
     {
         ResultList<MascotaDto> MascotasOlvidadas();
+        ResultElement<long> CantidadMascotasOlvidadas();        
     }
 }
