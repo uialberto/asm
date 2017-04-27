@@ -92,7 +92,51 @@ namespace Asm.Aplicacion.Test.Modulos.Core
             #region Assert
             Assert.IsTrue(result.Element > 0);
 
-            Assert.IsTrue(result.Element == 5, "La prueba MascotasOlvidadas no cumple el criterio de seleccion.");
+            Assert.IsTrue(result.Element == 5, "La prueba CantidadMascotasOlvidadasTest no cumple el criterio de seleccion.");
+
+
+            #endregion
+
+        }
+
+        [TestMethod]
+        public void CantidadMascotasSalvadasTest()
+        {
+            #region Arrange
+
+            var target = CreateAppServices();
+
+            for (int i = 1; i <= 10; i++)
+            {
+                Mascota entity = null;
+                if ((i % 10) == 0)
+                {
+                    entity = RepoMascotasHelperTest.Get();
+                    entity.KeyEstado = "P";
+                }
+                else
+                {
+                    entity = RepoMascotasHelperTest.Get();
+                    entity.KeyEstado = "A";
+                }
+
+                var res = RepoMascotasHelperTest.Create(entity);
+
+            }
+
+
+            #endregion
+
+            #region Act
+
+            var result = target.CantidadMascotasSalvadas();
+
+            #endregion
+
+            #region Assert
+            Assert.IsTrue(result.Element > 0);
+
+            Assert.IsTrue(result.Element == 5, "La prueba CantidadMascotasSalvadasTest no cumple el criterio de seleccion.");
 
 
             #endregion

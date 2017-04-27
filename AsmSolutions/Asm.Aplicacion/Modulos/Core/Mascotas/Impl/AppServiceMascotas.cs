@@ -27,6 +27,11 @@ namespace Asm.Aplicacion.Modulos.Core.Mascotas.Impl
             Repository = pRepository;
         }
 
+        #endregion
+
+        #region Servicios
+
+
         public ResultElement<long> CantidadMascotasOlvidadas()
         {
             var result = new ResultElement<long>();
@@ -34,6 +39,23 @@ namespace Asm.Aplicacion.Modulos.Core.Mascotas.Impl
             {
                 var cantidad = Repository.Filtrar(ele => ele.KeyEstado.ToUpper() == Mascota.KeyEstadoPendiente ||
                                                     ele.KeyEstado.ToUpper() == Mascota.KeyEstadoCreado).Count();
+                result.Element = cantidad;
+
+            }
+            catch (Exception ex)
+            {
+                var mensaje = ex.Message;
+                result.Errors.Add(mensaje);
+            }
+            return result;
+        }
+
+        public ResultElement<long> CantidadMascotasSalvadas()
+        {
+            var result = new ResultElement<long>();
+            try
+            {
+                var cantidad = Repository.Filtrar(ele => ele.KeyEstado.ToUpper() == Mascota.KeyEstadoAdptado).Count();
                 result.Element = cantidad;
 
             }
