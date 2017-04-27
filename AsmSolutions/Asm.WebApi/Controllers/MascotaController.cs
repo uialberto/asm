@@ -32,6 +32,7 @@ namespace Asm.WebApi.Controllers
             if ((result.HasErrors && result.Data == null) || result.HasErrors)
             {
                 var literalize = string.Join(",", result.Errors.ToArray());
+                // ToDo Personalizar mensajes de respuesta por http
                 var error = new HttpResponseMessage(HttpStatusCode.BadRequest)
                 {
                     Content = new StringContent(literalize)
@@ -40,11 +41,48 @@ namespace Asm.WebApi.Controllers
             }
             if (result.Data == null)
             {
+                // ToDo Personalizar mensajes de respuesta por http
                 return NotFound();
             }
             return Ok(result);
 
             #endregion
         }
+
+
+        [AllowAnonymous]
+        [Route("salvadas")]
+        [HttpPost]
+        public IHttpActionResult Salvadas()
+        {
+            #region Proceso
+
+
+
+            var result = Model.CantidadMascotasSalvadas();
+
+            if ((result.HasErrors && result.Data == null) || result.HasErrors)
+            {
+
+                var literalize = string.Join(",", result.Errors.ToArray());
+
+                // ToDo Personalizar mensajes de respuesta por http
+                var error = new HttpResponseMessage(HttpStatusCode.BadRequest)
+                {
+                    Content = new StringContent(literalize)
+                };
+                throw new HttpResponseException(error);
+            }
+            if (result.Data == null)
+            {
+                // ToDo Personalizar mensajes de respuesta por http
+
+                return NotFound();
+            }
+            return Ok(result);
+
+            #endregion
+        }
+
     }
 }

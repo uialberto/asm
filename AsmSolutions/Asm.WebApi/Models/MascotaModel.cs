@@ -47,5 +47,28 @@ namespace Asm.WebApi.Models
             }
             return result;
         }
+
+        public ResultData CantidadMascotasSalvadas()
+        {
+            var result = new ResultData();
+            try
+            {
+                var res = _service.CantidadMascotasSalvadas();
+                if (res.HasErrors)
+                {
+                    result.Errors = res.Errors;
+                    return result;
+                }
+                result.Data = new
+                {
+                    Total = res.Element,
+                };
+            }
+            catch (Exception ex)
+            {
+                result.Errors.Add(ex.Message);
+            }
+            return result;
+        }
     }
 }
