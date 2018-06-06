@@ -76,6 +76,11 @@ namespace Asm.Aplicacion.Helpers
 
             #endregion
 
+            var uoW = _unityContainer.Resolve<IUnitOfWork>() as UnitOfWork;
+            var n = uoW.Users.Count();
+
+
+
 
         }
 
